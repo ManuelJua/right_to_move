@@ -1,0 +1,1 @@
+Web scraper using scrapy to get properties data from https://www.rightmove.co.uk/ . This web scraper was only made for learning purposes and may not adjust to the website policies. Use it at your own risk
