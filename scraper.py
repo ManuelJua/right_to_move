@@ -41,7 +41,7 @@ class RightToMoveSpider(scrapy.Spider):
         
     def parse_property(self,response,**kwargs): #parse each property url to get info
         price_xpath='//div[@class="_1gfnqJ3Vtd1z40MlC0MzXu"]/span/text()'
-        title_xpath='//h1[@class="_2uQQ3SV0eMHL1P6t5ZDo2q"]/text()'
+        address_xpath='//h1[@class="_2uQQ3SV0eMHL1P6t5ZDo2q"]/text()'
         letting_details_xpath='//dl[@class="_2E1qBJkWUYMJYHfYJzUb_r"]/div[@class="_2RnXSVJcWbWv4IpBC1Sng6"]/*/text()'
         partial_agent_url_xpath='//a[@class="_2rTPddC0YvrcYaJHg9wfTP"]/@href'
         property_details_xpath='//div[@class="_4hBezflLdgDMdFtURKTWh"]//text()'
@@ -51,7 +51,7 @@ class RightToMoveSpider(scrapy.Spider):
         property_info={
         'url':kwargs['url'],
         'price':response.xpath(price_xpath).getall(),
-        'title':response.xpath(title_xpath).getall(),
+        'address':response.xpath(address_xpath).getall(),
         'letting_details':response.xpath(letting_details_xpath).getall(),
         'partial_agent_url':response.xpath(partial_agent_url_xpath).getall(),
         'property_details':response.xpath(property_details_xpath).getall(),
